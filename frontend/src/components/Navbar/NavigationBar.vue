@@ -1,6 +1,32 @@
 
 <template>
-  <NavigationBar> </NavigationBar>
+  <NavigationBar> 
+    <Nav.Link>
+            <li
+              className="nav-links-header"
+              onClick={() > {
+                history.push({
+                  pathname: `/home/${auth.user.username}`,
+                });
+              }}
+            >
+              Home
+            </li>
+          </Nav.Link>
+          <NavUserSwitch />
+          <Nav.Link>
+            <li
+              className="nav-links-header"
+              onClick={() > {
+                auth.logout(() => {
+                  history.push("/");
+                });
+              }}
+            >
+              Déconnexion
+            </li>
+          </Nav.Link>
+  </NavigationBar>
 </template>
 
 
@@ -29,41 +55,7 @@ export default {
     });
   },
 
-  methods,checkIfLogin, {
-    if (userStatus,isLoggedIn) {
-      return (
-        <>
-          <Nav.Link>
-            <li
-              className="nav-links-header"
-              onClick={() => {
-                history.push({
-                  pathname: `/home/${auth.user.username}`,
-                });
-              }}
-            >
-              Home
-            </li>
-          </Nav.Link>
-          <NavUserSwitch />
-          <Nav.Link>
-            <li
-              className="nav-links-header"
-              onClick={() => {
-                auth.logout(() => {
-                  history.push("/");
-                });
-              }}
-            >
-              Déconnexion
-            </li>
-          </Nav.Link>
-        </>
-      );
-    },
-
-  }
-  ,methods,test2, {
+  methods,test2, {
     Navbar
       ,id
       ,collapseOnSelect
@@ -81,7 +73,7 @@ export default {
 </script>
 
 <style scoped>
-#main-navbar {
+.main-navbar {
   background: linear-gradient(-87deg, #fdaeae 40%, rgb(194, 206, 207) 70%);
 }
 
