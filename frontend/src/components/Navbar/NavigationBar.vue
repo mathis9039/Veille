@@ -1,4 +1,3 @@
-
 <template>
   <NavigationBar> 
     <Nav.Link>
@@ -31,10 +30,8 @@
 
 
 <script>
-import { React, useState } from "react";
 import auth from "../../services/Auth";
 import { useHistory } from "react-router";
-import NavUserSwitch from "./NavUserSwitch";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import "../../styles/Navbar.css";
@@ -54,8 +51,6 @@ export default {
       isLoggedIn: auth,authenticated,
     });
   },
-
-  methods,test2, {
     Navbar
       ,id
       ,collapseOnSelect
@@ -68,8 +63,8 @@ export default {
       ,Navbar,Collapse,id
         ,Nav ,className="mr">{checkIfLogin()},Nav,
       Navbar,Collapse
-    ,Navbar
-  },
+    ,Navbar,
+}
 </script>
 
 <style scoped>

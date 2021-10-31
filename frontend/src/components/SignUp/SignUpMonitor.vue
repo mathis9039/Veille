@@ -1,4 +1,3 @@
-
 <template>
   <form>
     <Form onSubmit="{(e)">
@@ -90,8 +89,6 @@
 <script>
 import axios from "axios";
 import auth from "../../services/Auth";
-import { useState } from "react";
-import { useFormFields } from "../../lib/hooksLib";
 import { useHistory } from "react-router-dom";
 export default {
   name: signUnMoniteur,
@@ -106,13 +103,7 @@ export default {
   methods ,SignUpMonitor = () => {
   let history = useHistory();
 
-  const [errorMessage, setErrorMessage] = useState("");
-
-  const [fields, handleFieldChange] = useFormFields({
-
-  });
-
-  function onCreatePost(e) {
+  methods, onCreatePost(e) ;{
     e.preventDefault();
 
     if (!fields.username.startsWith("M")) {
@@ -134,6 +125,7 @@ export default {
         setErrorMessage("Le nom d'utilisateur ou le courriel existe déjà.");
       });
   } 
+}
 }
 </script>
 
