@@ -28,7 +28,7 @@
       </div>
       <div class="form-control">
         <label for="department">Choisissez votre département:</label>
-            <select name="Département" id="departement">
+            <select name="Département" id="departement" v-model="department">
             <option value="info">Informatique</option>
             <option value="archi">Architecture</option>
             <option value="med">Science</option>
@@ -62,7 +62,7 @@ function getUserType(username) {
   }
 }
 export default {
-  name: "Login",
+  name: "SignupMonitor",
   inheritAttrs: false,
   data() {
     return {
@@ -70,6 +70,7 @@ export default {
       firstName: "",
       lasstName: "",
       email: "",
+      department: "",
       pwd: "",
       errorMessage: "",
     };
@@ -83,9 +84,7 @@ export default {
       } else {
         var userType = getUserType(this.username);
         axios
-          .get(
-            "http://localhost:9090/login/" + userType + "/" + this.username + "/" + this.pwd
-          )
+          .get("http://localhost:9090/signUp/monitor")
           .then(function (response) {
             console.log(response.data);
           })

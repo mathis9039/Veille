@@ -83,9 +83,7 @@ export default {
       } else {
         var userType = getUserType(this.username);
         axios
-          .get(
-            "http://localhost:9090/login/" + userType + "/" + this.username + "/" + this.pwd
-          )
+          .get("http://localhost:9090/signUp/")
           .then(function (response) {
             console.log(response.data);
           })
